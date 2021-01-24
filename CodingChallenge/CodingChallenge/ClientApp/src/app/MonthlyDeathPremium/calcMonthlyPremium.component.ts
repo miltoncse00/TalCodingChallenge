@@ -43,10 +43,7 @@ export class calcMonthlyPremiumComponent implements OnInit {
     if (this.myForm.valid) {
       this.demoService.calcMonthlyPremium(this.myForm.value).subscribe(
         (data: DeathPremium) => {
-          alert(data);
           this.deathPremium = data;
-          alert(this.deathPremium.monthlyDeathPremium);
-
         },
         (err: HttpErrorResponse) => {
 
