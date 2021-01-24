@@ -1,6 +1,6 @@
 # Coding Challenge
 
-To run the application, require .NET Core 3.1 and Angular CLI 8.2.14. Build the application in Visual Studio 2019 and it will automatically restore the nuget packages and angular npm packages.
+To run the application, require .NET Core 3.1 and Angular CLI 8.2.14. Build the application in Visual Studio 2019 and it will automatically restore the nuget packages and angular npm packages and run with F5.
 
 I have added following features here.
 
