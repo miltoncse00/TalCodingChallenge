@@ -1,0 +1,86 @@
+<div class="panel">
+  <div class="page-header panel-primary panel-heading bg-primary">
+    <h2>Death Premium</h2>
+  </div>
+  <div class="alert alert-danger" role="alert" *ngIf="errors.length > 0">
+    <ul>
+      <li *ngFor="let error of errors">
+        {{ errors }}
+      </li>
+
+      <li>
+        <b>Monthly Death Sum Premium : {{deathPremium.monthlyDeathPremium}}</b>
+      </li>
+    </ul>
+  </div>
+  <div class="btn-primary" *ngIf="deathPremium != null">
+    <b>Monthly Death Sum Premium : {{deathPremium.monthlyDeathPremium}}</b>
+    <br/>
+  </div>
+  <div class="panel-body">
+    <form [formGroup]="myForm">
+      <!--Name-->
+      <div class="form-group row" [ngClass]="{'has-error':!myForm.controls.name.valid && myForm.controls.name.touched}">
+        <div class="col-sm-6">
+          <label class="control-label" for="idCtr">Name</label><span>*</span>
+          <input type="text" class="form-control" id="nameCtr" formControlName="name" />
+        </div>
+      </div>
+      <div class="alert alert-danger" role="alert"
+           *ngIf="!myForm.controls.name.valid && myForm.controls.name.touched">
+        Name is not valid.
+      </div>
+
+      <!--Age-->
+      <div class="form-group row" [ngClass]="{'has-error':!myForm.controls.age.valid && myForm.controls.age.touched}">
+        <div class="col-sm-6">
+          <label class="control-label" for="ageCtr">Age</label><span>*</span>
+          <input type="number" numeric class="form-control" id="ageCtr" formControlName="age" />
+        </div>
+      </div>
+      <div class="alert alert-danger" role="alert"
+           *ngIf="!myForm.controls.age.valid && myForm.controls.age.touched">
+        Age is not valid;
+      </div>
+
+      <!--DeathOfBirth-->
+      <div class="form-group row" [ngClass]="{'has-error':!myForm.controls.dateOfBirth.valid && myForm.controls.dateOfBirth.touched}">
+        <div class="col-sm-6">
+          <label class="control-label" for="dateOfBirthCtr">Date of Birth </label>
+          <input type="date" class="form-control" id="dateOfBirthCtr" formControlName="dateOfBirth" />
+        </div>
+      </div>
+      <div class="alert alert-danger" role="alert"
+           *ngIf="!myForm.controls.dateOfBirth.valid && myForm.controls.dateOfBirth.touched">
+        Enter valid Date of Birth
+      </div>
+
+      <!--DeathSumInsured-->
+      <div class="form-group row" [ngClass]="{'has-error':!myForm.controls.deathSumInsured.valid && myForm.controls.deathSumInsured.touched}">
+        <div class="col-sm-6">
+          <label class="control-label" for="deathSumInsuredCtr">Death-Sum Insured </label><span>*</span>
+          <input numeric type="number" decimals="2" class="form-control" id="deathSumInsuredCtr" maxlength="500" formControlName="deathSumInsured" />
+        </div>
+      </div>
+      <div class="alert alert-danger" role="alert"
+           *ngIf="!myForm.controls.deathSumInsured.valid && myForm.controls.deathSumInsured.touched">
+        Death-Sum Insured must be greater than 0 and less than 10000000000
+      </div>
+
+      <!--Occupation-->
+      <div class="form-group row" [ngClass]="{'has-error':!myForm.controls.occupation.valid && myForm.controls.occupation.touched}">
+        <div class="col-sm-6">
+          <label class="control-label" for="occupationCtr">occupation</label>
+          <select class="form-control" id="occupationCtr" formControlName="occupation" (change)='onOccupationChange()'>
+            <option *ngFor="let option of occupations" [value]="option">{{option}}</option>
+          </select>
+        </div>
+      </div>
+      <div class="alert alert-danger" role="alert"
+           *ngIf="!myForm.controls.occupation.valid && myForm.controls.occupation.touched">
+        Please select a occupation
+      </div>
+    </form>
+  </div>
+
+</div>
