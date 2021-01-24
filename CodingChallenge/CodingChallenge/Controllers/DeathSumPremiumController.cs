@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 using CodingChallenge.Application;
@@ -29,6 +30,9 @@ namespace CodingChallenge.Controllers
         [HttpPost("MonthlyDeathPremium")]
         public ActionResult<DealthPreimumModel> CalculateMonthlyDeathPremium(InsuredInput insured)
         {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
             var result =_deathPremiumService.CalculateMonthlyDeathPremium(insured);
             return Ok(result);
         }

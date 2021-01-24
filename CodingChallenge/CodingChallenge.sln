@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodingChallenge.Domain", ".
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodingChallenge.Data", "CodingChallenge.Data\CodingChallenge.Data.csproj", "{3430C8E8-0E1A-44F5-B9EA-3CD55356C40F}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodingChallenge.UnitTests", "..\CodingChallenge.UnitTests\CodingChallenge.UnitTests.csproj", "{C66EA2A2-0256-4D64-BA96-67C786971687}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,6 +37,10 @@ Global
 		{3430C8E8-0E1A-44F5-B9EA-3CD55356C40F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3430C8E8-0E1A-44F5-B9EA-3CD55356C40F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3430C8E8-0E1A-44F5-B9EA-3CD55356C40F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C66EA2A2-0256-4D64-BA96-67C786971687}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C66EA2A2-0256-4D64-BA96-67C786971687}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C66EA2A2-0256-4D64-BA96-67C786971687}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C66EA2A2-0256-4D64-BA96-67C786971687}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
