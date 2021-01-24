@@ -20,7 +20,7 @@ namespace CodingChallenge.Controllers
             _deathPremiumService = deathPremiumService;
         }
 
-        [HttpGet("GetOccupations")]
+        [HttpGet("Occupations")]
         public ActionResult GetOccupation()
         {
             var occopations = _deathPremiumService.GetOccupations();

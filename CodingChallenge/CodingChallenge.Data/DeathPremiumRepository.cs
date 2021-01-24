@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Net.Http.Headers;
 using CodingChallenge.Domain.Enum;
 
 namespace CodingChallenge.Data
@@ -7,11 +8,18 @@ namespace CodingChallenge.Data
     public class DeathPremiumRepository : IDeathPremiumRepository
     {
         private readonly Dictionary<string, RatingType> _occupationRatingMap;
+        private readonly IEnumerable<string> _occupations;
         private readonly Dictionary<RatingType, decimal> _ratingFactorMap;
         public DeathPremiumRepository()
         {
             _occupationRatingMap = PopulateOccupationRatingMap();
             _ratingFactorMap = PopulateRatingFactorMap();
+            _occupations = GetOccupationList();
+        }
+
+        private IEnumerable<string> GetOccupationList()
+        {
+            return new List<string>{"Cleaner", "Doctor", "Author", "Farmer", "Mechanic", "Florist" };
         }
 
         private Dictionary<RatingType, decimal> PopulateRatingFactorMap()
@@ -26,7 +34,7 @@ namespace CodingChallenge.Data
 
         public IEnumerable<string> GetOccupation()
         {
-            return _occupationRatingMap.Keys;
+            return GetOccupationList();
         }
 
         public decimal GetFactor(string insuredOccupation)

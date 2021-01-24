@@ -20,7 +20,7 @@ export class DemoService {
 
   getOccupation(): Observable<string[]> {
 
-    return this.httpClient.get<string[]>(this.myAppUrl + "api/DeathSumPremium/GetOccupations");
+    return this.httpClient.get<string[]>(this.myAppUrl + "api/DeathSumPremium/Occupations");
 
   }
 }
